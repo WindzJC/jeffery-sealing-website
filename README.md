@@ -1,31 +1,49 @@
 # Jeffery Sealing Website
 
-Client-facing author website concept for Jeffery Sealing / Girad Clacy.
+Client-facing author website for Jeffery Sealing / Girad Clacy.
 
 ## Current build
-- Responsive single-page site
-- Reader-first genre and series navigation
-- Daniel Marcos featured section with verified reading relationships
-- Girad Clacy identity and catalogue
-- Code Name Pigeon series
-- NCX Universe
-- Operation: Mount McKinley feature
-- Factual author-background section
-- Coast to Coast AM media credential
-- Responsive mobile menu
-- Catalogue filters based on verified catalogue groupings
-- Sticky-anchor offset and accessibility focus states
+- Responsive single-page website with reader-first navigation
+- Daniel Marcos case files and known reading relationships
+- Girad Clacy catalogue, Code Name Pigeon, NCX Universe
+- Operation: Mount McKinley and author biography
+- Mobile menu, accessible focus states and catalogue filters
+- New featured-hardcover section and edition links (October 14, 2026)
+- Social preview metadata and schema.org Person + 3 hardcover Book entities
+- Reader-first guide: Phantom Bullet is Daniel's entry case; Stopped Clock precedes Missing Coffee Pot
+- Author guidance: Code Name Pigeon may be read in any order; read Captain's Final Log Entry last in NCX
+- Direct verified retailer links for Phantom Bullet (Bol), Stopped Clock (Apple Books), Missing Coffee Pot (Barnes & Noble)
+- Filtered catalogue item counts with polite accessible announcements
+- Desktop (1440px) and mobile (390px) interactive browser checks passed October 14, 2026 (no horizontal overflow, functioning menu/filters, 0 JavaScript exceptions)
 
-## Still needed before final production
-- Jeffery's preferred author photograph, if he wants one used
-- Approved high-resolution book covers
-- Confirmed retailer links for each title
-- Jeffery's preferred complete Daniel Marcos reading order
-- Current hardcover availability
-- Purchase details for The Case of the Reverend's Son
-- Confirmed social/contact destinations
-- Any newer or unpublished titles missing from the public catalogue
+## Featured hardcovers (retailer-verified)
+| Title | ISBN-13 | Listing |
+|---|---|---|
+| Los Angeles: 2020 | 9781663271488 | https://www.bol.com/nl/nl/p/los-angeles/9300000227602979/ |
+| Heart of Stone | 9781663279071 | https://www.walmart.com/ip/20031451885 |
+| The Kindred | 9781663279064 | https://www.walmart.com/ip/20053521333 |
 
-## Notes
-Internal production placeholders were removed from the client-facing page.
-The previous version is preserved in `_archive/index-before-polish.html`.
+**Needs client confirmation:** Jeffery's message assigns 1-6632-7906-4 to *Heart of Stone* and 1-6632-7907-1 to *The Kindred*, but independent retailer records assign 9781663279064 to *The Kindred* and 9781663279071 to *Heart of Stone*. The user-supplied 1-6632-7906-4 also has an invalid ISBN-10 check digit (correct: 1-6632-7906-3). The local site uses the corroborated ISBN-13 mappings; confirm these with Jeffery before publication.
+
+## Direct Daniel Marcos listing links
+- The Case of the Phantom Bullet: https://www.bol.com/be/nl/p/the-case-of-the-phantom-bullet/9200000009946385/
+- The Case of the Stopped Clock: https://books.apple.com/us/book/the-case-of-the-stopped-clock/id665146871
+- The Case of the Missing Coffee Pot: https://www.barnesandnoble.com/w/the-case-of-the-missing-coffee-pot-jeffery-sealing/1117495646
+
+These destinations are independently identified book pages, but pricing, availability and retailer geography vary. Remaining catalogue retailer links need verification.
+
+## Remaining before final production
+- Approved high-resolution book covers and author portrait (if desired)
+- Confirmed retailer links for the entire catalogue, not just three hardcovers
+- Jeffery's preferred full Daniel Marcos reading order
+- Purchase details for *The Case of the Reverend's Son*
+- Complete book-format and current availability review
+- Verified official author contact and social destinations
+- Any missing newer or unpublished titles
+- Client approval of copy, edition details and final URLs
+- Full visual review again after insertion of approved book covers and final trailer
+- Approved connected two-book trailer and author-approved script; integrate into the Daniel Marcos section after production
+- Final launch/domain approval
+
+## Preview publishing note
+The preview is deployed at https://jeffery-sealing-website.pages.dev/ via the GitHub repository. Publication to this preview is authorized for review, but final client sign-off and any eventual public-facing domain launch remain separate. High-resolution covers, remaining retailer and contact details, and Jeffery's confirmation of ISBN assignments are still pending. Earlier design is preserved in `_archive/index-before-polish.html`.
