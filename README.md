@@ -16,6 +16,17 @@ Client-facing author website for Jeffery Sealing / Girad Clacy.
 - Filtered catalogue item counts with polite accessible announcements
 - Desktop (1440px) and mobile (390px) interactive browser checks passed October 14, 2026 (no horizontal overflow, functioning menu/filters, 0 JavaScript exceptions)
 
+## Cinematic Literary Noir design system (October 15, 2026)
+- **Display typeface:** Newsreader (headlines, series and book titles, editorial numerals)
+- **Interface and reading typeface:** Manrope (body, navigation, buttons, small metadata)
+- Google Fonts loaded with `display=swap`, preconnect hints, and local fallback stacks; fonts are linked, not bundled
+- Style layer in `theme.css` intentionally overrides the legacy inline base styles in `index.html`, keeping the functional content and JS intact
+- Color story: midnight/navy for legal mysteries, warm ivory and copper for the literary author identity, steel blue for espionage, antique gold for case files, gentle futuristic details for NCX
+- Refined hero case-file collage, genre navigation cards, Daniel Marcos catalogue, Girad Clacy series, hardcover features, about panel, and CTAs
+- Responsive adjustments at 1100px, 980px, 760px, and 380px; respects reduced-motion preferences
+- Responsive browser QA passed at 360px, 390px, 768px, 1024px, and 1440px with both real webfonts loaded, no horizontal overflow, functioning catalogue filters/mobile menu, and zero uncaught JS exceptions
+- This is a **preview design**, not final approval; publisher/retailer-original book-cover files have not been inserted
+
 ## Featured hardcovers (retailer-verified)
 | Title | ISBN-13 | Listing |
 |---|---|---|
