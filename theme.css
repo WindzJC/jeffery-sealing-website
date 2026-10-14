@@ -22,6 +22,16 @@ body { font-family:var(--sans); font-size:16px; line-height:1.7; letter-spacing:
 h1,h2,h3,h4,p { overflow-wrap:break-word; }
 a { text-underline-offset:4px; }
 button { font-family:var(--sans); }
+[hidden] { display:none!important; }
+.item>div { min-width:0; }
+.catalogue-detail { display:block; margin-top:12px; font-size:.85rem; font-weight:700; }
+.item .book-link { color:#84422f; border-color:#a47751; font-size:.82rem; }
+.catalogue-anchor { display:block; scroll-margin-top:110px; }
+#catalogueGrid:focus { outline:3px solid #84422f; outline-offset:6px; }
+article[id] { scroll-margin-top:110px; }
+.cover img { display:block; width:100%; aspect-ratio:2/3; object-fit:contain; }
+.cover small { position:relative; z-index:2; color:#c7d0d3; font-size:.75rem; margin-top:18px; }
+.info .book-author { color:#edc58d; font-size:.8rem; margin-bottom:10px; }
 a:focus-visible,button:focus-visible { outline:3px solid #ae704d; outline-offset:4px; }
 ::selection { background:#d7b38b; color:#131d27; }
 

@@ -9,7 +9,7 @@ Client-facing author website for Jeffery Sealing / Girad Clacy.
 - Operation: Mount McKinley and author biography
 - Mobile menu, accessible focus states and catalogue filters
 - New featured-hardcover section and edition links (October 14, 2026)
-- Social preview metadata and schema.org Person + 3 hardcover Book entities
+- Social preview metadata and schema.org Person identity (provisional hardcover ISBNs are not asserted in structured data)
 - Reader-first guide: Phantom Bullet is Daniel's entry case; Stopped Clock precedes Missing Coffee Pot
 - Author guidance: Code Name Pigeon may be read in any order; read Captain's Final Log Entry last in NCX
 - Direct verified retailer links for Phantom Bullet (Bol), Stopped Clock (Apple Books), Missing Coffee Pot (Barnes & Noble)
@@ -68,3 +68,23 @@ These destinations are independently identified book pages, but pricing, availab
 
 ## Preview publishing note
 The preview is deployed at https://jeffery-sealing-website.pages.dev/ via the GitHub repository. Publication to this preview is authorized for review, but final client sign-off and any eventual public-facing domain launch remain separate. High-resolution covers, remaining retailer and contact details, and Jeffery's confirmation of ISBN assignments are still pending. Earlier design is preserved in `_archive/index-before-polish.html`.
+
+## Reader journey preview (local review, October 15, 2026)
+- Compact opening guide introduces Daniel Marcos through the existing Phantom Bullet synopsis, with its reviewed Bol listing and a direct route to all six case files.
+- NCX and Code Name Pigeon have distinct section anchors, reviewed entry-book links, and catalogue routes (`#catalogue-ncx` and `#catalogue-pigeon`). Mount McKinley has a separate route and the supplied eCampus listing; no availability claim is made.
+- All six Daniel Marcos cards and eighteen numbered Girad Clacy cards are semantic HTML in the initial source. HTML is the sole runtime catalogue data source. Filters hide/show those same nodes, update pressed states/counts, and retain button focus. Series routes move focus into the filtered catalogue.
+- Without JavaScript, all titles, metadata and listing links remain readable; enhancement-only filter/menu buttons stay hidden, and mobile navigation remains visible. Series catalogue anchors fall back to the full catalogue.
+- Only supplied reviewed book URLs and the three existing hardcover destinations are used. Listings open in a new tab with accessible labels. Stock, prices, regions and remaining book destinations were not checked during this offline task.
+- Hardcover cards have individual detail anchors. Existing retailer ISBN assignments remain provisional pending Jeffery's confirmation, including the discrepancy above. Book entities asserting those assignments have been removed from structured data; the Person identity remains.
+
+### Authentic artwork integration
+Current text panels are explicitly labelled typographic studies, not published covers. Do not substitute scraped, generated or unapproved artwork. After approval, add local author/publisher-supplied assets with documented rights and exact title/edition matching. Use a 2:3 image with explicit intrinsic width/height, an appropriate resolution (e.g. 800 × 1200), optimized file size, and no cropping of title/author text. The `.cover img` rule supports contained 2:3 artwork. Retain the semantic title, author, reading guidance and metadata in `.info` outside the image; use empty alt text for a redundant adjacent cover, or concise meaningful alt text if it conveys unique approved information. Remove the typographic-study label when replacing that panel. Use lazy loading below the fold. Recheck responsiveness, layout shift, image failures, contrast and keyboard access after insertion.
+
+### Preview indexing and release boundary
+`pages.dev` is the review preview, not the agreed official author domain. This local review adds `noindex, nofollow` and deliberately leaves canonical unset. This directive applies to any deployment of this HTML, so the supervisor must review indexing and add the agreed canonical/domain metadata before an official launch. No Cloudflare account settings were changed. Historical deployment notes above do not authorize this revision: this work remains local, uncommitted and unpublished until supervisor review. Existing Google Fonts references remain; offline QA blocks external requests and uses the configured fallback fonts.
+
+### Local validation for this revision
+- Node syntax check and source comparison passed: all 6 + 18 cards, original book descriptions, ISBN metadata, ordering, numbering and author labels preserved. All 16 external listing controls use exactly the 10 supplied/existing reviewed book URLs; labels are nonempty and internal targets resolve.
+- Headless Chrome checks passed at 360, 390, 768, 1024 and 1440px: no horizontal overflow, all filter counts and pressed states correct, keyboard focus retained and visible, both series catalogue routes working (including repeated NCX visits), original DOM nodes preserved, mobile menu and Escape focus return working, reduced motion respected, zero uncaught JavaScript exceptions.
+- JavaScript-disabled reload at 360px passed: 24 readable cards, enhancement controls hidden, mobile navigation visible, no horizontal overflow. Desktop/mobile screenshots inspected locally.
+- The pre-existing Edge DevTools harness timed out in this restricted environment; Chrome required local headless sandbox flags to run. This does not change website configuration. No dependencies were installed and external HTTP/HTTPS requests were blocked. Real Google Fonts rendering and current retailer availability remain outside this offline validation.
