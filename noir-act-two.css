@@ -23,7 +23,9 @@ header{background:rgba(7,18,29,.965);border-bottom:1px solid rgba(225,196,150,.2
 .nav-links .nav-cta{border-color:rgba(227,193,142,.68);color:#f6ece0;background:rgba(235,207,171,.05)}
 .nav-links .nav-cta:hover{background:#dcb180;color:#0b1724}
 .menu{color:#f7e8d6;background:rgba(255,255,255,.045);border-color:rgba(230,193,147,.43)}
-a:focus-visible,button:focus-visible{outline-color:#f0bd84}
+/* Dark focus on pale surfaces; copper-bright focus on cinematic dark panels. */
+a:focus-visible,button:focus-visible{outline-color:#ae704d}
+header :is(a,button):focus-visible,.hero :is(a,button):focus-visible,.series :is(a,button):focus-visible,.media :is(a,button):focus-visible,.final-cta :is(a,button):focus-visible{outline-color:#f0bd84}
 ::selection{background:#d7a46e;color:#091522}
 
 /* OPENING CREDITS — genuinely dark hero with directional light and dossier collage */
@@ -249,7 +251,13 @@ a:focus-visible,button:focus-visible{outline-color:#f0bd84}
 .profile{border-radius:7px;background:linear-gradient(135deg,#263b48,#101c2b)}
 .profile .mini{color:#f4c38e}
 .about-copy h2{color:#182735}
-.media{max-width:1240px}
+/* Feature appearance: give inherited ink text a deliberate, high-contrast stage. */
+.media{max-width:1240px;background:#172d3d;color:#f5eadb;border:1px solid rgba(223,185,134,.28);border-radius:8px;padding:clamp(30px,4.5vw,58px);box-shadow:0 20px 60px rgba(0,0,0,.15)}
+.media h2{color:#f9ead8}
+.media p{color:#d0d9db}
+.media .eyebrow{color:#eac596}
+.media .date{color:#f0e2cc;border-color:rgba(235,209,178,.35)}
+.media .year{color:#dab38d}
 .final-cta{background:radial-gradient(circle at 89% 5%,rgba(201,147,96,.23),transparent 36%),linear-gradient(120deg,#122638,#1c3544 67%,#2b3e49);border:1px solid rgba(229,196,156,.17);border-radius:6px}
 .final-cta .eyebrow{color:#efc68e}
 .final-cta .btn{background:#e6bb8b;color:#111f2d;border-color:#e6bb8b}
