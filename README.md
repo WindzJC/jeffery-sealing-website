@@ -27,6 +27,16 @@ Client-facing author website for Jeffery Sealing / Girad Clacy.
 - Responsive browser QA passed at 360px, 390px, 768px, 1024px, and 1440px with both real webfonts loaded, no horizontal overflow, functioning catalogue filters/mobile menu, and zero uncaught JS exceptions
 - This is a **preview design**, not final approval; publisher/retailer-original book-cover files have not been inserted
 
+## Cinematic Literary Noir — Act II (October 15, 2026)
+- `noir-act-two.css` is the bold editorial redesign layer, loaded after `theme.css`; HTML content and functional JS are preserved
+- Midnight-blue, copper-lit full-height opening with dramatic serif headline, archival dossier collage, and coordinated dark credentials bar
+- Three **visibly distinct** genre cards: oxblood archival legal mystery, blue-steel espionage, and indigo/star-field speculative fiction
+- Strengthened Daniel Marcos book gallery styling and reading guidance without pretending CSS placeholders are approved book covers
+- Girad Clacy zone has a pale-steel backdrop plus separate dark intelligence-dossier and cosmic NCX cards
+- Hardcover features retain retailer details in a warm paper-gallery layout; submarine sonar, catalogue, author biography, and final action remain visually coordinated
+- Newsreader display type, Manrope reading type, accessible focus and reduced-motion behavior are retained
+- Work is deployed to the **existing Cloudflare Pages preview**, not treated as final client approval. Authentic cover artwork, ISBN clarification, and author sign-off are still pending
+
 ## Featured hardcovers (retailer-verified)
 | Title | ISBN-13 | Listing |
 |---|---|---|
