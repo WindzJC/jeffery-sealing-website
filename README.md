@@ -108,3 +108,16 @@ The six Daniel Marcos typographic case-file visuals are editorial navigation/pre
 - Validation: Node source assertions passed for the exact 6 + 18 title inventory/order, unchanged Reading Room and functional JavaScript, preserved external URLs and IDs, resolved hash targets, balanced HTML, six neutral case-file labels, ISBN withholding and preview robots.
 - Existing Temp headless Chrome QA passed at 360, 390, 768, 1024 and 1440px: no horizontal overflow, correct filters/counts/focus, series routes and repeated visits, mobile menu/Escape, reduced motion, and zero uncaught exceptions. JavaScript-disabled content/navigation passed at 360px.
 - Additional computed-style checks confirmed visible hero content without entrance animations at all five widths; hero screenshots at all five widths plus Daniel, hardcover and closing CTA screenshots were reviewed locally. No CSS adjustment was needed. External HTTP/HTTPS was blocked; fallback fonts were used, so live webfont rendering and retailer availability were not verified. `git diff --check` passed.
+
+
+## Original publisher covers — two-book feature (October 22, 2026)
+
+Jeffery supplied original front-cover JPEGs for **The Case of the Stopped Clock** and **The Case of the Missing Coffee Pot**. They are original published designs, not generated/recreated artwork, and must retain the publisher's text, imagery and proportions.
+
+- Local source files (not committed): `C:\Users\user\Downloads\Stopped Clock.jpg` (3720 × 6992, 600 DPI) and `C:\Users\user\Downloads\Missing Coffee Pot.jpg` (3864 × 6992, 600 DPI). **Do not overwrite these**; retain original files for the approved cinematic trailer.
+- The publisher JPEGs include gray scan/background areas to the right and below the front covers. Cropped only these margins to an approximately 2:3 front-cover rectangle, without changing artwork or text: Stopped Clock source rectangle x=0,y=0,width=3570,height=5355; Missing Coffee Pot x=0,y=0,width=3550,height=5325.
+- Website derivatives in `assets/books/`: `the-case-of-the-stopped-clock.jpg` (1000 × 1500, ~211 KB) and `the-case-of-the-missing-coffee-pot.jpg` (1000 × 1500, ~343 KB), JPEG quality 88.
+- Replaced only the corresponding Daniel Marcos editorial case-file placeholders in `index.html`. Responsive `.cover-published` styles in `noir-act-two.css` show the complete images with `object-fit:contain`; screen-reader titles and description remain in adjacent HTML, so image alt is intentionally empty within decorative media.
+- Preview remains `noindex, nofollow`. No other cover images or trailer footage were fabricated or added. **Other titles still require approved front-cover assets.**
+- Local Edge checks at 360, 390, 768, 1024, 1440px passed: both images loaded after scrolling into the lazy-loaded gallery, all 6 Daniel and 18 Girad entries remain, no broken hash targets or horizontal overflow, no uncaught JS errors. Desktop and each published-cover mobile screenshot were visually checked. JavaScript-disabled page also shows both original covers.
+- Trailer production should use the high-resolution source files, not these lightweight website derivatives. Do not alter Jeffery's actual published cover designs.

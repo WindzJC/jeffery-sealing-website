@@ -479,3 +479,21 @@ body>footer{max-width:none;padding-left:max(24px,calc((100vw - 1240px)/2));paddi
  .choose .intelligence-geometry::before,.choose .intelligence-geometry span{display:none}
 }
 @media(prefers-reduced-motion:reduce){.choose .portal a span{transition:none}.choose .portal a:hover span{transform:none}}
+
+/* Publisher-supplied front-cover artwork: preserve every pixel and show the full 2:3 cover. */
+.books .cover:not(.cover-published){min-height:390px}
+.books .cover.cover-published{
+  min-height:0;height:390px;padding:16px;
+  display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 50% 35%,#334759,#10202f 76%)!important;
+}
+.books .cover.cover-published::before,.books .cover.cover-published::after{display:none}
+.books .cover.cover-published img{
+  display:block;width:auto;height:100%;max-width:100%;
+  aspect-ratio:2/3;object-fit:contain;
+  box-shadow:0 15px 32px rgba(3,10,17,.43),0 0 0 1px rgba(237,220,189,.13);
+}
+@media(max-width:760px){
+  .books .cover:not(.cover-published){min-height:350px}
+  .books .cover.cover-published{height:350px}
+}
