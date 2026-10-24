@@ -143,3 +143,14 @@ Jeffery supplied original front-cover JPEGs for **The Case of the Stopped Clock*
 **Astra technical release checklist:** Verify browser widths 320/360/390/768/1024/1440, keyboard controls, images, links, page load, and social preview. After client sign-off, configure the agreed domain + HTTPS + canonical/og:url + production-specific OG image URLs, remove HTML `noindex,nofollow` only for the approved public domain, then reverify search indexing and final website delivery. Do not publish historical `_archive` or production notes; it is Git-ignored.
 
 **Independent review:** October 24 read-only Codex audit found no confirmed critical defect. Previously missing social assets and a mobile Escape keyboard edge case were actionable without Jeffery's approval. Potential Google Fonts stylesheet latency was noted but no blank-hero or entrance-animation defect was reproduced. Historic sections above describe earlier stages and may reference superseded work; this section and the actual deployed source are the current authoritative status.
+
+
+## October 24, 2026 — Dedicated book trailer feature
+
+- Added `#trailer` between the six Daniel Marcos books and the Girad Clacy sections, plus a `Book Trailer` primary navigation link.
+- The custom editorial film presentation uses only Jeffery's **publisher-supplied, original front covers** for `The Case of the Stopped Clock` and `The Case of the Missing Coffee Pot` and follows the approved *single connected trailer* brief. It does not reveal or alter the essential Silverton cliffhanger.
+- Reader-facing status is **Film coming soon**. There is deliberately **no fake Play button, embedded preview, stock footage posing as a finished film, or production-only notes**. Visitors can follow the active CTA to `#danielBooks` and explore the connected books.
+- The film is a separate, unfinished deliverable. After Jeffery approves the completed video, replace or extend the `.trailer-art` presentation with a real accessible player (captions, usable controls, downloadable or inline transcript as appropriate), preserve the original cover art, and retest keyboard, mobile, loading, and poster handling. Do not deploy unfinished video or alter the approved trailer script without approval.
+- The new nav item makes menu mode appropriate for 761–1050px widths. The enhanced JavaScript mobile menu operates at these widths; without JS, navigation remains exposed. All existing page sections and anchor destinations are preserved.
+- Local Chrome/Edge tests passed at 320/390/768/1024/1440px: no horizontal overflow, publisher imagery loads, true section label and anchor, nav includes Trailer, 768/1024px menu opens, and zero JS exceptions. Full previous page regression checks across 320–1440px also passed.
+- This is a **preview-only improvement**. `noindex, nofollow` remains until official-domain approval. The Astra Productions company website was not touched.

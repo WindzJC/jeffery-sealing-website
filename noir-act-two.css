@@ -509,3 +509,92 @@ body>footer{max-width:none;padding-left:max(24px,calc((100vw - 1240px)/2));paddi
 .choose .portal-spy a:focus-visible,.choose .portal-space a:focus-visible{
   outline-color:#f5be8e;
 }
+
+
+/* CONNECTED MYSTERIES — an editorial trailer stage, not a playable-video placeholder.
+   Replace trailer-art with an approved, captioned film player only after delivery. */
+.trailer-feature{
+  position:relative;isolation:isolate;overflow:hidden;
+  padding:90px 24px 96px;color:#f6ede2;
+  background:radial-gradient(ellipse at 95% 22%,rgba(151,105,70,.17),transparent 39%),
+    linear-gradient(130deg,#0a151e 0%,#102531 52%,#172a38 100%);
+  border-top:1px solid #3d4a50;border-bottom:1px solid #a17b58;
+}
+.trailer-feature::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+ background:repeating-linear-gradient(90deg,transparent 0 53px,rgba(233,211,175,.025) 54px 55px)}
+.trailer-inner{max-width:1240px;margin:0 auto}
+.trailer-masthead{display:flex;gap:18px;align-items:center;justify-content:space-between;
+ padding-bottom:19px;margin-bottom:37px;border-bottom:1px solid rgba(232,201,162,.25)}
+.trailer-id{font-weight:800;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#dcb98b}
+.trailer-availability{display:inline-flex;align-items:center;border:1px solid #b99b745c;padding:8px 14px;
+ color:#f0d8b8;line-height:1.35;font-size:.69rem;letter-spacing:.11em;text-transform:uppercase;font-weight:800}
+.trailer-availability::before{content:"";width:6px;height:6px;margin-right:10px;background:#d7b384;border-radius:50%}
+.trailer-stage{display:grid;grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);align-items:center;gap:clamp(30px,5vw,78px)}
+.trailer-copy{min-width:0;display:flex;flex-direction:column;align-items:flex-start;padding:15px 0 9px}
+.trailer-eyebrow{margin:0 0 19px;color:#d9aa78;text-transform:uppercase;letter-spacing:.18em;font-weight:800;font-size:.7rem}
+.trailer-copy h2{font-family:var(--serif),Georgia,serif;font-size:clamp(3.3rem,5.1vw,5.8rem);
+ color:#fff7e9;font-weight:400;letter-spacing:-.055em;line-height:1.02;margin:0 0 27px}
+.trailer-copy h2 em{font-weight:400;color:#dcb58b}
+.trailer-summary{font-size:1.03rem;line-height:1.8;color:#e0e5e4;max-width:40ch;margin:0 0 13px}
+.trailer-summary em{color:#fff4e5}
+.trailer-support{font-size:.89rem;line-height:1.8;max-width:43ch;color:#afbfc4;margin:0 0 24px}
+.trailer-action{display:inline-flex;min-height:46px;gap:18px;align-items:center;justify-content:space-between;
+ font-weight:800;text-decoration:none;font-size:.88rem;line-height:1.4;padding:12px 18px;
+ color:#141f27;background:#ecc79a;border:1px solid #ecc79a}
+.trailer-action span{font-size:1.08rem}
+.trailer-action:hover{background:#fff0d7}
+.trailer-action:focus-visible{outline:3px solid #fff1de;outline-offset:4px}
+.trailer-imprint{margin:34px 0 0;padding-top:18px;border-top:1px solid #e4bb8a44;
+ width:100%;color:#a9b5ba;letter-spacing:.12em;text-transform:uppercase;font-size:.65rem;font-weight:800}
+.trailer-art{min-width:0;position:relative;padding:25px 28px 18px;border:1px solid #7b7a704d;
+ background:linear-gradient(160deg,rgba(228,209,173,.09),rgba(8,18,27,.38));box-shadow:0 30px 65px #020c155c}
+.trailer-art::before,.trailer-art::after{content:"";position:absolute;pointer-events:none;top:0;bottom:0;width:1px;background:#bfb19229}
+.trailer-art::before{left:12px}.trailer-art::after{right:12px}
+.trailer-art-head,.trailer-art-foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;
+ text-transform:uppercase;letter-spacing:.12em;font-size:.61rem;line-height:1.5;font-weight:800;color:#b7c2c4}
+.trailer-art-head{padding-bottom:16px;border-bottom:1px solid #c8af8d3b}
+.trailer-art-foot{padding-top:15px;border-top:1px solid #c8af8d3b}
+.trailer-covers{display:grid;grid-template-columns:minmax(0,1fr) 25px minmax(0,1fr);align-items:center;
+ gap:11px;padding:34px 0 31px}
+.trailer-cover{min-width:0;margin:0;display:flex;flex-direction:column;align-items:center;gap:15px}
+.trailer-cover img{display:block;max-width:100%;width:201px;aspect-ratio:2/3;height:auto;object-fit:contain;
+ border:1px solid rgba(250,243,231,.12);box-shadow:5px 15px 30px #020b17c7}
+.trailer-cover figcaption{min-height:38px;align-self:stretch;color:#e8d8c2;line-height:1.45;
+ font-size:.71rem;text-align:center}
+.trailer-cover figcaption span{display:inline-block;margin-right:5px;color:#d5a977;font-weight:850}
+.trailer-sequence{font-family:var(--serif),Georgia,serif;font-size:1.9rem;color:#d4af81;text-align:center}
+@media(max-width:980px){
+ .trailer-feature{padding:65px 22px 72px}
+ .trailer-stage{grid-template-columns:1fr;gap:25px}
+ .trailer-copy h2{font-size:clamp(3.5rem,8vw,5rem)}
+ .trailer-art{max-width:760px;width:100%;margin:0 auto}
+ .trailer-covers{gap:14px}
+ .trailer-cover img{width:215px}
+}
+@media(max-width:520px){
+ .trailer-feature{padding:47px 18px 55px}
+ .trailer-masthead{align-items:flex-start;flex-direction:column;gap:11px;margin-bottom:24px}
+ .trailer-id{font-size:.64rem;letter-spacing:.12em}
+ .trailer-copy{padding:0}
+ .trailer-copy h2{font-size:clamp(2.9rem,10.2vw,4rem)}
+ .trailer-summary{font-size:.94rem}
+ .trailer-support{font-size:.85rem}
+ .trailer-imprint{font-size:.6rem}
+ .trailer-art{padding:18px 17px 13px}
+ .trailer-art-head,.trailer-art-foot{font-size:.52rem}
+ .trailer-covers{grid-template-columns:minmax(0,1fr) 16px minmax(0,1fr);gap:6px;padding:23px 0 18px}
+ .trailer-cover{gap:9px}
+ .trailer-cover figcaption{font-size:.62rem;min-height:44px}
+ .trailer-sequence{font-size:1.35rem}
+}
+/* With Trailer added to navigation, avoid cramped horizontal links on small laptops. */
+@media(min-width:761px) and (max-width:1050px){
+ .nav{flex-wrap:wrap;padding:12px 18px}
+ .menu{display:inline-flex;margin-left:auto}
+ .nav-links{display:none;position:absolute;left:18px;right:18px;top:70px;flex-direction:column;align-items:stretch;gap:4px;
+ background:#0b1824;border:1px solid #9a815c66;padding:13px;box-shadow:0 22px 45px #0007}
+ .nav-links.open{display:flex}
+ .nav-links a{padding:10px 13px}
+ html:not(.enhanced) .nav-links{display:flex;position:static;flex:1 0 100%;flex-direction:row;flex-wrap:wrap;box-shadow:none}
+}
+@media(prefers-reduced-motion:reduce){.trailer-action{transition:none}}
