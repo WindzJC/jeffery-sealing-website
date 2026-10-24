@@ -25,7 +25,7 @@ Client-facing author website for Jeffery Sealing / Girad Clacy.
 - Refined hero case-file collage, genre navigation cards, Daniel Marcos catalogue, Girad Clacy series, hardcover features, about panel, and CTAs
 - Responsive adjustments at 1100px, 980px, 760px, and 380px; respects reduced-motion preferences
 - Responsive browser QA passed at 360px, 390px, 768px, 1024px, and 1440px with both real webfonts loaded, no horizontal overflow, functioning catalogue filters/mobile menu, and zero uncaught JS exceptions
-- This is a **preview design**, not final approval; publisher/retailer-original book-cover files have not been inserted
+- This is a **preview design**, not final approval; publisher-supplied covers for Stopped Clock and Missing Coffee Pot are now inserted, while the remaining books still need approved cover artwork
 
 ## Cinematic Literary Noir — Act II (October 15, 2026)
 - `noir-act-two.css` is the bold editorial redesign layer, loaded after `theme.css`; HTML content and functional JS are preserved
@@ -87,7 +87,7 @@ The preview is deployed at https://jeffery-sealing-website.pages.dev/ via the Gi
 - External HTTP/HTTPS was blocked; existing font references used fallback fonts. Real Newsreader/Manrope rendering remains for supervisor QA. Approved book cover assets remain pending and unchanged; no generated, scraped or substitute covers were introduced. This revision is local, uncommitted, unpushed and undeployed.
 
 ### Authentic artwork integration
-The six Daniel Marcos typographic case-file visuals are editorial navigation/presentation panels, not approved covers. They use a neutral Daniel Marcos / Case File series label; approved author/publisher cover art is still required. Do not substitute scraped, generated or unapproved artwork. After approval, add local author/publisher-supplied assets with documented rights and exact title/edition matching. Use a 2:3 image with explicit intrinsic width/height, an appropriate resolution (e.g. 800 × 1200), optimized file size, and no cropping of title/author text. The `.cover img` rule supports contained 2:3 artwork. Retain the semantic title, author, reading guidance and metadata in `.info` outside the image; use empty alt text for a redundant adjacent cover, or concise meaningful alt text if it conveys unique approved information. Replace the typographic case-file panel only when the matching artwork is approved. Use lazy loading below the fold. Recheck responsiveness, layout shift, image failures, contrast and keyboard access after insertion.
+Four Daniel Marcos titles still use editorial typographic case-file panels, not published cover art. Stopped Clock and Missing Coffee Pot now display their publisher-supplied front covers. The remaining panels use a neutral Daniel Marcos / Case File series label; approved author/publisher cover art is still required for those titles. Do not substitute scraped, generated or unapproved artwork. After approval, add local author/publisher-supplied assets with documented rights and exact title/edition matching. Use a 2:3 image with explicit intrinsic width/height, an appropriate resolution (e.g. 800 × 1200), optimized file size, and no cropping of title/author text. The `.cover img` rule supports contained 2:3 artwork. Retain the semantic title, author, reading guidance and metadata in `.info` outside the image; use empty alt text for a redundant adjacent cover, or concise meaningful alt text if it conveys unique approved information. Replace the typographic case-file panel only when the matching artwork is approved. Use lazy loading below the fold. Recheck responsiveness, layout shift, image failures, contrast and keyboard access after insertion.
 
 ### Preview indexing and release boundary
 `pages.dev` is the review preview, not the agreed official author domain. This local review adds `noindex, nofollow` and deliberately leaves canonical unset. This directive applies to any deployment of this HTML, so the supervisor must review indexing and add the agreed canonical/domain metadata before an official launch. No Cloudflare account settings were changed. Historical deployment notes above do not authorize this revision: this work remains local, uncommitted and unpublished until supervisor review. Existing Google Fonts references remain; offline QA blocks external requests and uses the configured fallback fonts.
@@ -121,3 +121,25 @@ Jeffery supplied original front-cover JPEGs for **The Case of the Stopped Clock*
 - Preview remains `noindex, nofollow`. No other cover images or trailer footage were fabricated or added. **Other titles still require approved front-cover assets.**
 - Local Edge checks at 360, 390, 768, 1024, 1440px passed: both images loaded after scrolling into the lazy-loaded gallery, all 6 Daniel and 18 Girad entries remain, no broken hash targets or horizontal overflow, no uncaught JS errors. Desktop and each published-cover mobile screenshot were visually checked. JavaScript-disabled page also shows both original covers.
 - Trailer production should use the high-resolution source files, not these lightweight website derivatives. Do not alter Jeffery's actual published cover designs.
+
+
+## October 24, 2026 — Pre-handover final QA and release boundary
+
+**Current state:** The Cloudflare Pages URL is a working, publicly accessible **review preview**. Do not call the site an approved final launch or remove `noindex, nofollow` until Jeffery approves the actual domain and finished content. The full website's custom Reading Room, 6 Daniel Marcos cards, 18 Girad Clacy catalogue cards, and the two publisher-supplied front covers remain in place.
+
+**Completed in this audit:**
+- Added a bespoke `favicon.svg` (JS monogram) and 1200 × 630 `social-preview.png` using the two approved covers and original editorial design. `og:image` and Twitter image refer to the current Pages review URL. **Update both image URLs to Jeffery's approved canonical domain when launching**; neither a production domain nor canonical is assumed today.
+- Keyboard refinement: mobile menu Escape now closes from the focused Menu toggle itself as well as from its navigation links, and returns focus correctly.
+- Keyboard refinement: focused links inside the Reading Room's light paper dossier have a dark, high-contrast outline and light halo. Dark panel focus styling stays readable.
+- No book details, edition assignments, retailer links, images, actual trailer content, official domain or contact information were fabricated or replaced.
+
+**Still requiring Jeffery's input before final launch:**
+1. Approved actual covers for all other books (the site contains only `Stopped Clock` and `Missing Coffee Pot` artwork).
+2. Preferred purchase URLs for remaining entries; do not claim unconfirmed titles are for sale.
+3. Confirmed reading order, synopsis for `The Case of the Reverend's Son`, and the conflicting ISBN assignments of `Heart of Stone` and `The Kindred`.
+4. Public contact/social preferences and optional author photograph; domain choice; approval of final copy/design and image-use permissions.
+5. When completed and approved, the connected two-book cinematic trailer can be embedded in a dedicated on-site section.
+
+**Astra technical release checklist:** Verify browser widths 320/360/390/768/1024/1440, keyboard controls, images, links, page load, and social preview. After client sign-off, configure the agreed domain + HTTPS + canonical/og:url + production-specific OG image URLs, remove HTML `noindex,nofollow` only for the approved public domain, then reverify search indexing and final website delivery. Do not publish historical `_archive` or production notes; it is Git-ignored.
+
+**Independent review:** October 24 read-only Codex audit found no confirmed critical defect. Previously missing social assets and a mobile Escape keyboard edge case were actionable without Jeffery's approval. Potential Google Fonts stylesheet latency was noted but no blank-hero or entrance-animation defect was reproduced. Historic sections above describe earlier stages and may reference superseded work; this section and the actual deployed source are the current authoritative status.

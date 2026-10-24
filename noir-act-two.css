@@ -497,3 +497,15 @@ body>footer{max-width:none;padding-left:max(24px,calc((100vw - 1240px)/2));paddi
   .books .cover:not(.cover-published){min-height:350px}
   .books .cover.cover-published{height:350px}
 }
+
+/* Final accessibility QA: a dark inner focus ring remains visible on the paper dossier. */
+.choose .portal-legal a:is(:focus-visible,:focus){
+  outline-color:#493022;
+  outline-width:3px;
+  background:#fff9ed;
+  color:#42291e;
+  box-shadow:0 0 0 5px #f2d1a5;
+}
+.choose .portal-spy a:focus-visible,.choose .portal-space a:focus-visible{
+  outline-color:#f5be8e;
+}

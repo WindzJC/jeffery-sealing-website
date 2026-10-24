@@ -10,7 +10,13 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Jeffery Sealing | Author">
 <meta property="og:description" content="Explore the legal mysteries, military thrillers and science fiction of Jeffery Sealing, also writing as Girad Clacy.">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://jeffery-sealing-website.pages.dev/social-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Jeffery Sealing author name beside the published covers of The Case of the Stopped Clock and The Case of the Missing Coffee Pot.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jeffery-sealing-website.pages.dev/social-preview.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <title>Jeffery Sealing | Author</title>
 <style>
 :root{--ink:#12161c;--paper:#f3efe7;--paper2:#fbf9f4;--soft:#e8e1d6;--muted:#676b72;--line:rgba(18,22,28,.13);--rust:#9f5941;--rust2:#814431;--navy:#172331;--navy2:#0f1822;--gold:#c4a26d;--white:#fff;--r:24px;--shadow:0 28px 80px rgba(17,22,28,.14)}
@@ -188,8 +194,17 @@ menu.addEventListener('click', () => {
   const open = nav.classList.toggle('open');
   menu.setAttribute('aria-expanded', String(open));
 });
+menu.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true') {
+    event.preventDefault();
+    closeMenu(true);
+  }
+});
 nav.addEventListener('keydown', event => {
-  if (event.key === 'Escape') closeMenu(true);
+  if (event.key === 'Escape') {
+    event.preventDefault();
+    closeMenu(true);
+  }
 });
 nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
   closeMenu(false);
