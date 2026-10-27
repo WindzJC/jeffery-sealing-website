@@ -419,3 +419,29 @@ section[id]{scroll-margin-top:76px}
   .cinema h2{font-size:clamp(2.65rem,10vw,3.85rem)}
   .cinema h2 .cinema-headline-keep{white-space:normal}
 }
+
+/* Finished book trailer: responsive, privacy-enhanced YouTube video player. */
+.cinema-status-live{border-color:#a4c9b6;color:#ddf8e7}
+.cinema-status-live .status-dot{background:#7bc8a2}
+.cinema-video-panel{scroll-margin-top:82px}
+.cinema-player{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#070f1b;border:1px solid rgba(231,191,148,.45);margin:21px 0 17px;box-shadow:0 14px 28px rgba(2,7,16,.25)}
+.cinema-player iframe{display:block;width:100%;height:100%;border:0}
+.cinema-watch-external{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:11px;padding:8px 0;color:#f0d4b5;text-underline-offset:4px;font-size:.87rem;font-weight:700}
+.cinema-watch-external:hover,.cinema-foot a:hover{color:white}
+.cinema-watch-external:focus-visible,.cinema-foot a:focus-visible{outline:3px solid white;outline-offset:4px}
+.cinema-foot a{color:#e9ccb0;text-decoration:underline;text-underline-offset:3px}
+.cinema-story .cinema-lede em{font-style:italic}
+@media(max-width:540px){.cinema-video-panel{padding:13px 13px 12px}.cinema-player{margin:16px 0 13px}.cinema-filmstrip,.cinema-foot{font-size:.57rem}}
+
+/* Trailer viewing card: link to Astra's actual YouTube release, no broken inline embed. */
+.cinema-poster{display:block;position:relative;aspect-ratio:16/9;overflow:hidden;background:#020814;border:1px solid #a6a9a4;margin:21px 0 17px;text-decoration:none;box-shadow:0 14px 28px rgba(2,7,16,.25)}
+.cinema-poster img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .3s ease,filter .3s ease}
+.cinema-poster::after{content:"";position:absolute;inset:40% 0 0;background:linear-gradient(transparent,rgba(3,9,20,.81));pointer-events:none}
+.cinema-poster-play{position:absolute;z-index:2;top:50%;left:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:76px;height:53px;border-radius:13px;background:#e62430;color:white;box-shadow:0 8px 19px rgba(0,0,0,.5);transition:background .2s ease,transform .2s ease}
+.cinema-poster-triangle{font-size:1.42rem;margin-left:3px;line-height:1}
+.cinema-poster-label{position:absolute;left:20px;right:20px;bottom:18px;z-index:3;display:flex;align-items:center;justify-content:space-between;color:#fff5e8;font-weight:800;font-size:.85rem;line-height:1.4;text-shadow:0 1px 2px #000}
+.cinema-poster:hover img{transform:scale(1.025);filter:brightness(1.12)}
+.cinema-poster:hover .cinema-poster-play{background:#cf1929;transform:translate(-50%,-50%) scale(1.07)}
+.cinema-poster:focus-visible{outline:3px solid white;outline-offset:4px}
+@media(max-width:540px){.cinema-poster{margin:16px 0 13px}.cinema-poster-play{width:56px;height:39px;border-radius:10px}.cinema-poster-triangle{font-size:1.02rem}.cinema-poster-label{left:12px;right:12px;bottom:10px;font-size:.72rem}}
+@media(prefers-reduced-motion:reduce){.cinema-poster img,.cinema-poster-play{transition:none}}

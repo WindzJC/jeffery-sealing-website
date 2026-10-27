@@ -220,3 +220,12 @@ Five focused fixes:
 **Live-site safety:** The trailer is still accurately marked as in production. Only the two publisher-supplied mystery front covers are used. The other five editorial panels are placeholders pending Jeffery's authorization of published cover artwork; no unauthorized images were introduced. `noindex, nofollow` remains intact.
 
 **QA:** Local Edge regression test passed at 320, 360, 390, 768, 1024 and 1440 pixels: all 25 title records and two published trailer images present, no broken internal anchors, no horizontal overflow, no uncaught JavaScript exceptions. Dedicated visual screenshots for full cover sheet, Exhibit A, NCX, Operation: Mount McKinley and trailer at phone/desktop sizes were inspected. Do not publish until user reviews the changes.
+
+## October 27, 2026 — Cinematic book trailer released
+
+- Astra Productions' completed two-book trailer is published on YouTube: `https://youtu.be/R_PgpgggRX4` (video ID `R_PgpgggRX4`; video title `jeffrey book trailer`).
+- The dedicated `#trailer` section now says **Trailer available**, removes all references to unfinished footage, and uses the video's genuine YouTube 1280 × 720 thumbnail saved locally at `assets/trailer-poster.jpg`.
+- Prominent "Watch the book trailer" and clickable poster both open the actual YouTube video in a new tab. The page retains the connected Case 02/Case 03 explanation and an internal "Explore the connected mysteries" link. The footer supplies an alternate watch link.
+- **Important:** This is deliberately an external YouTube watch experience, not an on-site iframe or native HTML5 player. On local `file://` and `http://127.0.0.1` browsers, both `youtube.com/embed` and `youtube-nocookie.com/embed` showed YouTube "video unavailable" / Error 153 despite the official public video API reporting `playableInEmbed:true`. Avoid publishing a visible broken player; use the working public watch-page link unless the embed is independently verified in a normal production browser.
+- The client preview remains `noindex, nofollow` while client publication details are unresolved. The five editorial book panels still await approved published cover art.
+- Verified local HTTP preview in Edge at 320/360/390/768/1024/1440px: 25 titles, video thumbnail available, 16:9 aspect ratio, internal links valid, no horizontal scrolling or uncaught JS errors; desktop/mobile screenshots inspected.
