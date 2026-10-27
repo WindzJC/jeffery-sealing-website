@@ -250,3 +250,15 @@ Five focused fixes:
 - Preserved Jeffery's actual inline YouTube trailer `R_PgpgggRX4` (Play controls and alternate YouTube link), `noindex, nofollow` for the preview, current retailer URLs and all writing/biography details without introducing unverified facts.
 - **QA:** Edge browser checked widths 320 / 360 / 390 / 768 / 1024 / 1440 px. No horizontal overflow, 25 book records intact, 6 editorial panels/2 actual published covers, no JavaScript exceptions. Independent no-JS check passed; genre filters returned 6/6/2/11/25 records respectively. Connected-case note issue found in visual screenshots and corrected before release.
 - **Remaining author dependencies:** permission for other publisher covers, author biography confirmation, preferred purchase links, official domain and client approval before public-indexed launch.
+
+## October 28, 2026 — Trailer layout rebalance
+
+Adjusted only the dedicated `#trailer` section's CSS to give Jeffery's embedded cinematic film stronger visual priority:
+
+- Increased the trailer-only content width to 1380px, changing the two-column proportions to 38% editorial copy and 62% featured video.
+- Widened the YouTube player from approximately **546px to 735px at 1440px**; same player and watch button, still 16:9, still plays directly within the site. At 1868px, the player remains 735px wide without stretching unnecessarily.
+- Balanced the headline size, reduced excessive vertical padding, separated the watch/explore actions, and tightened the decorative video frame.
+- Below 1100px, stacks text and video for readable viewing; mobile video reaches 330px at a 390px viewport (previously ~320px).
+- No changes to scripts, original cover assets, external book links, page metadata, or catalogue entries. Preview remains `noindex, nofollow`.
+- Browser QA on 320, 360, 390, 768, 1024, 1440 and 1868px confirmed 25 books, preserved correct iframe, responsive 16:9 sizing, no horizontal overflow, no broken fragment links or uncaught page JavaScript errors.
+- Note: local `file://` YouTube iframes display Error 153 due to missing web referrer. Live website playback must be verified at the actual Cloudflare Pages domain.
