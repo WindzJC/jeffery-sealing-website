@@ -393,3 +393,29 @@ section[id]{scroll-margin-top:76px}
 .log-covers .editorial-cover:last-child{margin-top:36px}
 .operation .editorial-cover{width:100%;margin:0}
 @media(max-width:600px){.editorial-cover-title{font-size:clamp(1rem,4vw,1.65rem)}.editorial-cover-subtitle,.editorial-cover-kicker{font-size:.6rem}.editorial-cover-author{font-size:.65rem}}
+
+/* October 27 V3 visual QA corrections; preview branch, not deployed. */
+/* Keep the decorative manila folder pocket behind, never over, the full title panel. */
+.sheet-folder .folder-pocket{z-index:0}
+.sheet-folder .folder-cover.editorial-cover{z-index:2;padding-bottom:24px}
+.sheet-folder .stamp{
+  z-index:3;mix-blend-mode:normal;background:#fff9ef;color:#b11f29;
+  box-shadow:0 3px 8px rgba(20,28,46,.16)
+}
+.sheet-folder figcaption{position:relative;z-index:3;overflow:visible}
+
+/* Let panels break only at normal word boundaries, not mid-punctuation. */
+.editorial-cover .editorial-cover-title{
+  overflow-wrap:normal;word-break:normal;hyphens:none;text-wrap:balance
+}
+.editorial-cover.cover-mount .editorial-cover-title{font-size:clamp(1.15rem,1.7vw,1.5rem)}
+.editorial-cover.cover-ncx .editorial-cover-title{font-size:clamp(1.15rem,1.6vw,1.46rem)}
+.exhibit-file-panel .editorial-cover-title{font-size:clamp(1.8rem,2.6vw,2.6rem);text-wrap:nowrap}
+
+/* A balanced headline avoids orphaning "ONE" at desktop widths. */
+.cinema h2{max-width:none;line-height:1.02;font-size:clamp(2.9rem,4.1vw,4.3rem)}
+.cinema h2 .cinema-headline-keep{white-space:nowrap}
+@media(max-width:540px){
+  .cinema h2{font-size:clamp(2.65rem,10vw,3.85rem)}
+  .cinema h2 .cinema-headline-keep{white-space:normal}
+}

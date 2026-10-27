@@ -204,3 +204,19 @@ Applied six fixes from a first-time-visitor review. New styles live in `clarity.
 - Tablet (761–980px) hero cards no longer cover each other's subtitles.
 - QA (local Chromium, 320/390/900/1440px): no horizontal overflow, no broken in-page anchors, no JavaScript errors, mobile menu opens and closes with Escape, catalogue filter routes return 6 (Pigeon) and 2 (NCX) titles, and reduced-motion disables the trailer animation.
 - **Still needed from Jeffery:** contact method; covers for Phantom Bullet, Three Arrests, Sleepy Security Guard and Reverend's Son; a synopsis, case type and store link for Reverend's Son; store links for Three Arrests and Sleepy Security Guard; the official domain; the finished trailer; final sign-off. Keep `noindex, nofollow` until then.
+
+
+## October 27, 2026 — V3 visual corrections awaiting user review
+
+This is an **unpublished local review branch** (`v3-fixes-review-20261027`). The existing Cloudflare Pages website and GitHub `main` are unchanged.
+
+Five focused fixes:
+1. The first-screen case-file title panel now sits in front of the manila pocket, showing its full footer and Jeffery's name; the START HERE stamp uses a solid ivory backing and normal blending.
+2. Editorial title panels use natural word boundaries rather than breaking punctuation; NCX and Mount McKinley titles have tailored, legible display sizes.
+3. The trailer headline has a balanced desktop measure, keeping “One cinematic” together rather than leaving “ONE” by itself.
+4. Exhibit A's small catalogue panel says “FILE NO. 01” rather than duplicating the visible book title beneath it.
+5. The trailer's same-page “Explore the connected mysteries” link displays an upward arrow instead of an external-link arrow.
+
+**Live-site safety:** The trailer is still accurately marked as in production. Only the two publisher-supplied mystery front covers are used. The other five editorial panels are placeholders pending Jeffery's authorization of published cover artwork; no unauthorized images were introduced. `noindex, nofollow` remains intact.
+
+**QA:** Local Edge regression test passed at 320, 360, 390, 768, 1024 and 1440 pixels: all 25 title records and two published trailer images present, no broken internal anchors, no horizontal overflow, no uncaught JavaScript exceptions. Dedicated visual screenshots for full cover sheet, Exhibit A, NCX, Operation: Mount McKinley and trailer at phone/desktop sizes were inspected. Do not publish until user reviews the changes.
