@@ -262,3 +262,15 @@ Adjusted only the dedicated `#trailer` section's CSS to give Jeffery's embedded 
 - No changes to scripts, original cover assets, external book links, page metadata, or catalogue entries. Preview remains `noindex, nofollow`.
 - Browser QA on 320, 360, 390, 768, 1024, 1440 and 1868px confirmed 25 books, preserved correct iframe, responsive 16:9 sizing, no horizontal overflow, no broken fragment links or uncaught page JavaScript errors.
 - Note: local `file://` YouTube iframes display Error 153 due to missing web referrer. Live website playback must be verified at the actual Cloudflare Pages domain.
+
+## October 28, 2026 — Jeffery's approved retailer preference
+
+- Jeffery explicitly authorized Astra to choose commonly accessible retailers, especially Amazon and Barnes & Noble, rather than asking him for individual purchase URLs. He did not supply or verify Amazon product pages.
+- Updated the first three Daniel Marcos Case Board entries and corresponding catalogue cards, preserving the direct retailer links we had already verified.
+- **Stopped Clock:** Existing direct Apple Books eBook destination remains. Added **Find on Amazon**, a clearly labeled Amazon book-search URL containing the complete title and author, not an unverified Amazon product/ASIN.
+- **Missing Coffee Pot:** Existing direct Barnes & Noble page `https://www.barnesandnoble.com/w/the-case-of-the-missing-coffee-pot-jeffery-sealing/1117495646` remains; both paperback and NOOK editions are listed there. Added **Find on Amazon** search, not an assumed exact Amazon listing.
+- **Phantom Bullet:** Retained direct Walmart paperback and Apple Books eBook pages, added clearly labeled **Find on Amazon** search for title + author.
+- The finished film's secondary link now reads **Explore & buy the books** and points to `#mysteries`. The main Watch button and the inline YouTube film are untouched.
+- No Amazon searches are misrepresented as verified product pages. For other 22 titles, existing direct retailer links were left unchanged until exact listings can be checked. No publisher links, availability, or pricing were invented.
+- Tested in Edge (320, 360, 390, 768, 1024, 1440, 1868 px): no horizontal overflow, correct 25-book inventory, functional filters and existing embedded video, no uncaught script errors. Checked new book links visually in desktop and phone Case Board and Records Index screenshots.
+- The website remains a `noindex, nofollow` preview pending Jeffery's final acceptance and remaining publication requirements.

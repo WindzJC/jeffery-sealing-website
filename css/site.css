@@ -596,3 +596,12 @@ section[id]{scroll-margin-top:76px}
   .cinema-player{margin:13px 0 12px}
   .cinema-story .cinema-link{width:100%;justify-content:center}
 }
+
+/* Accessible retailer choices: exact product pages remain distinct from search results. */
+.exhibit .links{align-items:center;gap:4px 16px}
+.exhibit .links .book-retailer-search{color:var(--blue-deep);text-decoration:underline;text-decoration-style:dotted;text-underline-offset:4px}
+.exhibit .links a:focus-visible,.retailer-options a:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.card .retailer-options{display:flex;flex-wrap:wrap;align-items:center;gap:0 15px;margin-top:auto;border-top:1px solid #d5cabe}
+.card .retailer-options a{margin-top:0;min-height:44px;padding:9px 0 0;font-size:.84rem}
+.card .retailer-options .book-retailer-search{font-size:.8rem;color:#42618b;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:4px}
+@media(max-width:550px){.card .retailer-options{gap:0 18px}.exhibit .links{gap:2px 16px}}
