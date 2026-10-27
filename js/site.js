@@ -68,6 +68,20 @@
     targets.forEach(function (t) { t.classList.add('in-view'); });
   }
 
+  // The trailer plays on this page. The external YouTube link remains a fallback.
+  var trailerButton = document.querySelector('[data-play-trailer]');
+  var trailerFrame = document.getElementById('jeffery-trailer-player');
+  if (trailerButton && trailerFrame) {
+    trailerButton.addEventListener('click', function () {
+      // A direct user gesture permits autoplay in browsers that support it.
+      // Visitors can also press Play in YouTube's native embedded controls.
+      if (trailerFrame.src.indexOf('autoplay=1') === -1) {
+        trailerFrame.loading = 'eager';
+        trailerFrame.src += '&autoplay=1';
+      }
+    });
+  }
+
   var year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
 })();

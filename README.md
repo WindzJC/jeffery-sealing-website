@@ -229,3 +229,12 @@ Five focused fixes:
 - **Important:** This is deliberately an external YouTube watch experience, not an on-site iframe or native HTML5 player. On local `file://` and `http://127.0.0.1` browsers, both `youtube.com/embed` and `youtube-nocookie.com/embed` showed YouTube "video unavailable" / Error 153 despite the official public video API reporting `playableInEmbed:true`. Avoid publishing a visible broken player; use the working public watch-page link unless the embed is independently verified in a normal production browser.
 - The client preview remains `noindex, nofollow` while client publication details are unresolved. The five editorial book panels still await approved published cover art.
 - Verified local HTTP preview in Edge at 320/360/390/768/1024/1440px: 25 titles, video thumbnail available, 16:9 aspect ratio, internal links valid, no horizontal scrolling or uncaught JS errors; desktop/mobile screenshots inspected.
+
+## October 27, 2026 — Inline playback on Jeffery's website
+
+- Replaced the outbound clickable poster in the dedicated `#trailer` section with the **actual responsive YouTube embedded player** at `https://www.youtube.com/embed/R_PgpgggRX4?rel=0`, with accessible frame title, native playback controls, allowfullscreen, and privacy-conscious referrer policy.
+- The main `Watch the book trailer` action is now an internal link to `#trailer-video`. With JavaScript enabled, clicking it starts an inline autoplay attempt through a **user-initiated** frame URL update; users can always click YouTube's embedded Play control. With JavaScript disabled, it still navigates to the embedded player, not another tab.
+- Kept only a small optional `Open on YouTube` footer link as fallback.
+- **Playback verification:** Original headless/local `file://` tests had shown error 153/unavailable. A targeted real-domain test on `https://jeffery-sealing-website.pages.dev/#trailer` succeeded: injecting the standard YouTube iframe displayed Jeffery's actual thumbnail, title, channel and inline Play button. The public YouTube watch metadata separately reported `playableInEmbed:true`.
+- Edge local layout/JS tests passed 320, 360, 390, 768, 1024, 1440 px, with 25 intact book cards, no scroll overflow, valid anchor targets and JavaScript syntax. A button-interaction test verified the primary CTA keeps the same page, changes the URL hash to `#trailer-video`, and adds `autoplay=1` to the inline frame source.
+- Still a `noindex, nofollow` review preview; remaining published book cover permissions and author launch sign-off remain unresolved.
