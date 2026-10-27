@@ -1,5 +1,30 @@
 # Jeffery Sealing Website
 
+## Current design: "The Case Files" (October 27, 2026)
+
+The site is presented as an author's case file. His Daniel Marcos books are titled *From the Case Files of Attorney Daniel Marcos*, and his own background (Navy, criminal justice, private investigation, corrections) reads like a service record, so every section is an official document:
+
+| Section | Treatment |
+| --- | --- |
+| `#top` Cover sheet | Author name in the red small caps from his covers, form fields (also known as, background, based in), *Phantom Bullet* rising out of a manila "Exhibit A" folder with a START HERE stamp |
+| `#mysteries` Exhibits A–F | Daniel Marcos case board; red string joins B → C (one case, two books); D–F as evidence tags; honest "in production" note for the trailer |
+| `#thrillers` Girad Clacy files | Code Name Pigeon as a personnel file whose redaction bars lift; NCX as a green-bar ship's log; *Operation: Mount McKinley* as an operation file |
+| `#books` Records index | All 25 titles with filter tabs and verified US store links |
+| `#about` Service record | Career fields plus the Coast to Coast AM appearance as a clipping |
+
+- **Palette** comes from his covers: paper white, the *Phantom Bullet* title blue and red rule, the NCX green.
+- **Type** (self-hosted in `fonts/`, OFL licenses in `fonts/LICENSES.txt`): Cinzel (name), Saira Condensed (titles), Public Sans (text, designed for U.S. government forms), Courier Prime (typed entries).
+- **Files:** `index.html`, `css/site.css`, `js/site.js`. The old `theme.css`, `noir-act-two.css` and `clarity.css` were removed; history is in Git.
+- **Motion:** opening rule/folder/stamp sequence, connected-case string, Pigeon redactions, and ship's log cursor. The dedicated upcoming-film feature never suggests a video is available. All motion is off for reduced-motion visitors, and the page remains complete with scripts disabled.
+- **Covers:** Only Stopped Clock and Missing Coffee Pot retain Jeffery's publisher-supplied published artwork. Five retailer-sourced image files have been removed from the publishable V3 version pending permission. Their places use clearly labeled editorial title studies, not fictitious published covers. The social-sharing image uses only the two publisher-supplied covers.
+- **Icons:** `favicon.svg/.ico`, 16/32 px, `apple-touch-icon.png`, 192/512 px, `site.webmanifest`, new `social-preview.png`.
+- **No contact section:** no authorized public contact for Jeffery was found. Add one when he provides it.
+- Keep `noindex, nofollow` until official-domain approval.
+
+---
+
+## Earlier history (superseded designs)
+
 Client-facing author website for Jeffery Sealing / Girad Clacy.
 
 ## Current build
