@@ -445,3 +445,119 @@ section[id]{scroll-margin-top:76px}
 .cinema-poster:focus-visible{outline:3px solid white;outline-offset:4px}
 @media(max-width:540px){.cinema-poster{margin:16px 0 13px}.cinema-poster-play{width:56px;height:39px;border-radius:10px}.cinema-poster-triangle{font-size:1.02rem}.cinema-poster-label{left:12px;right:12px;bottom:10px;font-size:.72rem}}
 @media(prefers-reduced-motion:reduce){.cinema-poster img,.cinema-poster-play{transition:none}}
+
+
+/* OCT 2026 — THE CASE FILES / FINAL EDITORIAL POLISH
+   A quieter archival palette; no changes to approved original cover images. */
+:root{
+  --blue:#23477f;
+  --blue-deep:#18345d;
+  --red:#a52a35;
+  --red-dark:#86222c;
+  --manila:#ead8af;
+  --manila-2:#d9bf8a;
+}
+.sheet h1{letter-spacing:.018em}
+.section-head h2{letter-spacing:.002em;line-height:1.06}
+.section-intro{line-height:1.75;max-width:59ch}
+.exhibit-tag{padding:13px 17px;font-size:.88rem}
+.exhibit-body{padding:18px 21px 23px;gap:12px}
+.exhibit h3{font-size:clamp(1.45rem,1.8vw,1.68rem);line-height:1.1}
+.exhibit-body .isbn{font-size:.78rem;line-height:1.65}
+.exhibit-body .links{gap:6px 19px}
+.exhibit-body .links a{font-size:.88rem}
+.tag-card{padding-top:40px;padding-bottom:25px}
+.tag-card h3{font-size:1.5rem;line-height:1.12}
+.tag-card .tag-label{font-size:.9rem}
+
+/* The story connection is deliberate rather than merely two small red dots. */
+.connected{grid-template-columns:minmax(0,1fr) 76px minmax(0,1fr)}
+.string{height:4px;background:var(--red);box-shadow:0 2px 7px #572e2b2c}
+.string-line{background:var(--red);height:100%}
+.pin{width:16px;height:16px;top:-6px;background:var(--red-dark);border:2px solid #fff1e5;box-shadow:0 2px 4px #36212544}
+.pin:first-of-type{left:-8px}.pin:last-of-type{right:-8px}
+.connected-note{background:var(--sheet);border-left:4px solid var(--red);padding:12px 15px;margin-top:16px;display:flex;align-items:center;flex-wrap:wrap;gap:8px 15px;color:var(--ink);font-size:.83rem;letter-spacing:0;line-height:1.45;box-shadow:0 5px 13px #252a3320}
+.connected-note-rule{width:24px;height:3px;background:var(--red);flex:0 0 24px}
+.connected-note strong{color:var(--red-dark);font-size:.88rem;letter-spacing:.035em;white-space:nowrap}
+.connected-note-explainer{font-family:var(--text);font-weight:600;color:var(--ink-2)}
+@media(max-width:760px){
+  .connected{grid-template-columns:1fr;grid-template-rows:auto 49px auto auto}
+  .string{height:auto;width:4px;box-shadow:none}
+  .string-line{width:100%;height:100%}
+  .pin:first-of-type{left:-6px;top:-7px}
+  .pin:last-of-type{left:-6px;right:auto;top:auto;bottom:-7px}
+}
+
+/* Bespoke filing treatments replace the generic 'THE CASE FILES' cover strip. */
+.editorial-cover.cover-case{background:linear-gradient(148deg,#315b95,#22477e 68%,#183456);border-color:#496f9b}
+.editorial-cover.cover-spy{background:repeating-linear-gradient(0deg,#122c33 0 18px,#21424b 19px),#12343a;border-color:#486d73;aspect-ratio:3/4}
+.editorial-cover.cover-ncx{background:radial-gradient(circle at 77% 18%,#416e5880,transparent 44%),linear-gradient(140deg,#315f4b,#163e34);border-color:#668975}
+.editorial-cover.cover-log{background:radial-gradient(circle at 80% 25%,#466b5780,transparent 38%),linear-gradient(160deg,#244b3c,#132d2a);border-color:#6a927a}
+.editorial-cover.cover-mount{background:linear-gradient(153deg,#536478,#263c53 64%,#152c42);border-color:#687f98}
+.editorial-cover-kicker{font-size:.7rem;letter-spacing:.075em;line-height:1.55}
+.editorial-cover-title{letter-spacing:.01em;line-height:1.08}
+.editorial-cover.cover-spy .editorial-cover-title{font-size:clamp(1.52rem,2vw,2.05rem)}
+.dossier-cover.editorial-cover{aspect-ratio:3/4}
+.log-covers .editorial-cover{box-shadow:0 18px 28px -16px #15271f68}
+.editorial-cover::after{border-color:#dce8e866}
+
+/* Film is the final act of the paper-and-ink story, not a separate web template. */
+.cinema{background:linear-gradient(120deg,#111e30,#1a2e46 62%,#172940);border-top-color:var(--red)}
+.cinema h2 em{color:#e4c19b}
+.cinema .label,.cinema-number,.cinema-filmstrip{color:#e6c69e}
+.cinema-status-live{border-color:#a7c6b3;color:#e4f5e7}
+.cinema-display{background:linear-gradient(150deg,#233a52,#132338);border-color:#c6ad8773}
+.cinema-link{background:#f5e6cf;border-color:#f5e6cf;color:#192d48}
+.cinema-link:hover{background:#ffffff;border-color:#ffffff}
+
+/* Bibliography as a curated archival register. Larger titles, distinct series stamps. */
+.index .section-intro{max-width:57ch}
+.index .filters{gap:8px;border-bottom:1px solid #aeb6bd;align-items:end;margin-bottom:21px}
+.index .filters button{border-color:#a8b1bb;background:#fffcf6;border-radius:3px 3px 0 0;padding:0 16px;font-size:.88rem}
+.index .filters button[aria-pressed="true"]{background:#ead8af;color:#1a2638;box-shadow:inset 0 4px 0 var(--red);border-bottom:1px solid #ead8af}
+.index-count{font-size:.84rem;letter-spacing:.035em;margin-bottom:17px}
+.cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.card{
+  padding:0 20px 13px;min-height:172px;
+  background:#fffdfa;border:1px solid #d3d0c8;
+  box-shadow:0 1px 0 #c0b9a7,0 10px 20px -21px #131e2ba1;
+}
+.card:hover{border-color:#9babbc;box-shadow:0 1px 0 #9babbc,0 12px 25px -21px #152742a1}
+.card-meta{
+  margin:0 -20px;padding:11px 20px 10px;
+  font-size:.78rem;font-weight:700;line-height:1.5;min-height:59px;
+  color:#33485d;border-bottom:2px solid #365a83;background:#edf1f6;
+}
+.card[data-group="pigeon"] .card-meta{border-bottom-color:#366b6d;background:#edf4f1;color:#254b4c}
+.card[data-group="ncx"] .card-meta{border-bottom-color:#397456;background:#eff5ef;color:#234d3a}
+.card[data-group="other"] .card-meta{border-bottom-color:#a0815d;background:#f6f0e5;color:#665034}
+.card h3{font-size:1.57rem;line-height:1.1;margin:13px 0 9px;max-width:26ch}
+.card a{margin-top:auto;padding:9px 0 0;min-height:44px;font-size:.84rem;text-decoration-thickness:1px}
+.card a:hover{text-decoration-thickness:2px}
+.index-more{margin-top:27px}
+@media(max-width:1080px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.card{min-height:163px}.card h3{font-size:1.45rem}}
+@media(max-width:560px){
+  .cards{grid-template-columns:1fr;gap:11px}
+  .card{min-height:0;padding-bottom:10px}
+  .card-meta{min-height:0}
+  .card h3{font-size:1.52rem}
+  .connected-note{padding:11px 12px}
+  .dossier-cover.editorial-cover{max-width:210px}
+  .editorial-cover-kicker{font-size:.65rem}
+  .index .filters{gap:6px}
+  .index .filters button{padding:0 12px}
+}
+
+/* Override the legacy .connected-note span {width:36px;height:2px} rule for real words. */
+.connected-note .connected-note-explainer{
+  width:auto;height:auto;background:none;flex:1 1 220px;min-width:0;
+  display:inline;color:var(--ink-2);line-height:1.5
+}
+.connected-note .connected-note-rule{flex:0 0 24px;width:24px;height:3px;background:var(--red)}
+.connected-note strong{flex:0 0 auto}
+@media(max-width:560px){
+  .connected-note{display:grid;grid-template-columns:24px minmax(0,1fr);gap:6px 12px;align-items:center}
+  .connected-note strong{grid-column:2}
+  .connected-note .connected-note-explainer{grid-column:2;grid-row:2}
+}
