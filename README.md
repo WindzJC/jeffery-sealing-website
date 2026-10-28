@@ -274,3 +274,17 @@ Adjusted only the dedicated `#trailer` section's CSS to give Jeffery's embedded 
 - No Amazon searches are misrepresented as verified product pages. For other 22 titles, existing direct retailer links were left unchanged until exact listings can be checked. No publisher links, availability, or pricing were invented.
 - Tested in Edge (320, 360, 390, 768, 1024, 1440, 1868 px): no horizontal overflow, correct 25-book inventory, functional filters and existing embedded video, no uncaught script errors. Checked new book links visually in desktop and phone Case Board and Records Index screenshots.
 - The website remains a `noindex, nofollow` preview pending Jeffery's final acceptance and remaining publication requirements.
+
+## October 28, 2026 — Exact Amazon and Barnes & Noble pages for the three featured mysteries
+
+- Replaced every **Find on Amazon** search link with the exact Amazon.com product page. Each one was opened in a real browser on October 28, 2026 and showed the right title, "by Jeffery Sealing", and an Add to Cart button. Each page also offers the Kindle edition through its format switcher.
+  - Phantom Bullet: `https://www.amazon.com/dp/147595753X` (paperback ISBN 9781475957532)
+  - Stopped Clock: `https://www.amazon.com/dp/1475986238` (paperback ISBN 9781475986235)
+  - Missing Coffee Pot: `https://www.amazon.com/dp/1491715049` (paperback ISBN 9781491715048)
+- Added exact Barnes & Noble pages, each opening on the paperback with Add to Cart, and with the NOOK eBook on the same page:
+  - Phantom Bullet: `https://www.barnesandnoble.com/w/the-case-of-the-phantom-bullet-jeffery-sealing/1113732615?ean=9781475957532`
+  - Stopped Clock: `https://www.barnesandnoble.com/w/the-case-of-the-stopped-clock-jeffery-sealing/1115596876?ean=9781475986235`
+  - Missing Coffee Pot: `https://www.barnesandnoble.com/w/the-case-of-the-missing-coffee-pot-jeffery-sealing/1117495646?ean=9781491715048`
+- Changed the hero buttons to **Buy on Amazon** and **Barnes & Noble**, following Jeffery's preference.
+- Kept the other verified retailers as alternatives on the Case Board: Apple Books for Phantom Bullet and Stopped Clock, and Walmart for Phantom Bullet. The order is Amazon · Barnes & Noble · Apple Books · Walmart.
+- Removed the dotted "search result" link styling, which no longer has anything to style.
