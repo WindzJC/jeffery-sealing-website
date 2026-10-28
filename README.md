@@ -274,3 +274,8 @@ Adjusted only the dedicated `#trailer` section's CSS to give Jeffery's embedded 
 - No Amazon searches are misrepresented as verified product pages. For other 22 titles, existing direct retailer links were left unchanged until exact listings can be checked. No publisher links, availability, or pricing were invented.
 - Tested in Edge (320, 360, 390, 768, 1024, 1440, 1868 px): no horizontal overflow, correct 25-book inventory, functional filters and existing embedded video, no uncaught script errors. Checked new book links visually in desktop and phone Case Board and Records Index screenshots.
 - The website remains a `noindex, nofollow` preview pending Jeffery's final acceptance and remaining publication requirements.
+
+## 2026-10-28 - Updated YouTube embed after creator re-upload
+- Replaced the trailer's embedded YouTube video and its external viewing link with the creator-provided new video ID `gLTgp94h170` (`https://youtu.be/gLTgp94h170`).
+- Previous ID `R_PgpgggRX4` remains in historical changelog above only; it is no longer embedded in the page.
+- No other copy, artwork, styling, catalogue, purchase links, or preview indexing status changed.
