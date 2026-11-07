@@ -293,3 +293,23 @@ Adjusted only the dedicated `#trailer` section's CSS to give Jeffery's embedded 
 - Changed the hero buttons to **Buy on Amazon** and **Barnes & Noble**, following Jeffery's preference.
 - Kept the other verified retailers as alternatives on the Case Board: Apple Books for Phantom Bullet and Stopped Clock, and Walmart for Phantom Bullet. The order is Amazon · Barnes & Noble · Apple Books · Walmart.
 - Removed the dotted "search result" link styling, which no longer has anything to style.
+
+## November 7, 2026 — Real covers, exact store links, launch-ready details
+
+- **Real covers.** Jeffery supplied flatbed scans (600 dpi) of *Phantom Bullet*, *Three Arrests*, *Sleepy Security Guard* and *Reverend's Son*. Each was straightened (Sleepy Security Guard 0.39°, Reverend's Son 0.14°), cropped to the printed edge at exactly 2:3, lightly descreened so the print halftone doesn't moiré, and exported at 640×960.
+  - **Opening folder:** shows the real *Phantom Bullet* cover, with the START HERE stamp moved onto open space clear of the printed title.
+  - **Exhibit A:** shows the real cover, replacing the temporary file panel.
+  - **Exhibits D–F:** now full exhibits with covers, replacing the luggage-tag stand-ins. On phones the cover sits beside the text so six covers don't triple the scroll; below 360px they stack.
+- **Store links.** Includes the October 28 exact Amazon and Barnes & Noble pages for Cases 01–03. Barnes & Noble pages for Cases 04 and 05 were opened on November 7 and both showed Add to Cart:
+  - Three Arrests: `https://www.barnesandnoble.com/w/the-case-of-the-three-arrests-jeffery-sealing/1117551554?ean=9781491715185`
+  - Sleepy Security Guard: `https://www.barnesandnoble.com/w/the-case-of-the-sleepy-security-guard-jeffery-sealing/1132332286?ean=9781505481402`
+  - Amazon for Cases 04–05 is **not** linked: Amazon now blocks automated checks, so those pages couldn't be confirmed.
+  - *Reverend's Son* has no listing found anywhere online, so no store link yet.
+- **Trailer.** The frame label "THE SILVERTON CONNECTION" is replaced with the film's actual subject (YouTube title: "The Case of the Stopped Clock & The Case of the Missing Coffee Pot | Official Book Trailer"). The "Open on YouTube" link now has a 44px tap target with the same look.
+- **Sharing image.** `social-preview.png` was rebuilt in the site's own type (Cinzel name, Saira Condensed, Courier Prime) with the real *Phantom Bullet*, *Stopped Clock* and *Coffee Pot* covers in a manila folder.
+- **Structured data.** Expanded to a schema.org Person, the Daniel Marcos BookSeries, and Book entries with paperback and eBook ISBNs and cover images for Cases 01–05.
+- **Still to confirm with Jeffery:**
+  - Series order: the scan files were numbered 4 Sleepy Security Guard, 5 Reverend's Son, 6 Three Arrests, while the site lists Three Arrests 04, Sleepy 05, Reverend's Son 06.
+  - A *Reverend's Son* synopsis and ISBN.
+  - A public contact method.
+  - The `jefferysealing.com` DNS. At launch, swap pages.dev for the domain in `og:url`, `og:image`, `twitter:image` and the JSON-LD, and remove `noindex, nofollow`.

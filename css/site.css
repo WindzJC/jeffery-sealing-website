@@ -149,13 +149,8 @@ section[id]{scroll-margin-top:76px}
 .motion .string-line{transform:scaleX(0);transition:transform .9s cubic-bezier(.6,0,.2,1)}
 .motion .connected.in-view .string-line{transform:scaleX(1)}
 
-.tags{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,28px);margin-top:clamp(8px,2vw,20px)}
-.tag-card{position:relative;background:var(--manila);padding:34px 22px 22px 22px;clip-path:polygon(18px 0,calc(100% - 18px) 0,100% 18px,100% 100%,0 100%,0 18px);display:flex;flex-direction:column;gap:8px}
-.eyelet{position:absolute;top:12px;left:50%;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:var(--paper-2);box-shadow:0 0 0 3px #c9ad72}
-.tag-label{font-family:var(--typed);font-weight:700;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;color:var(--red)}
-.tag-card h3{font-family:var(--title);font-weight:700;font-size:1.4rem;line-height:1.05}
-.tag-card p:not(.tag-label):not(.isbn){color:#3a3322;font-size:.95rem}
-.tag-card .isbn{color:#5b4d2c;margin-top:auto}
+.later-cases{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,28px);margin-top:clamp(8px,2vw,20px);align-items:stretch}
+.later-cases .exhibit-tag span+span{font-weight:700;letter-spacing:.08em}
 
 .reel{margin-top:clamp(36px,5vw,56px);display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(18px,3vw,36px);align-items:center;background:var(--ink);color:#f4f1ea;padding:22px clamp(20px,3vw,32px)}
 .reel-frame{position:relative;width:150px;height:92px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:14px 0;background-image:radial-gradient(circle,#f4f1ea 2.2px,transparent 2.6px),radial-gradient(circle,#f4f1ea 2.2px,transparent 2.6px);background-size:12px 14px;background-repeat:repeat-x;background-position:0 0,0 100%}
@@ -286,7 +281,12 @@ section[id]{scroll-margin-top:76px}
   .motion .connected.in-view .string-line{transform:scaleY(1)}
   .pin:first-of-type{left:-6px;top:-6px}
   .pin:last-of-type{right:auto;left:-6px;top:auto;bottom:-6px}
-  .tags{grid-template-columns:1fr}
+  /* Later cases sit side by side: cover left, file right, so six covers don't triple the scroll. */
+  .later-cases{grid-template-columns:1fr}
+  .later-cases .exhibit{display:grid;grid-template-columns:minmax(0,132px) minmax(0,1fr);grid-template-rows:auto 1fr}
+  .later-cases .exhibit-tag{grid-column:1/-1}
+  .later-cases .exhibit img{width:100%;margin:18px 0 18px 18px;align-self:start}
+  .later-cases .exhibit h3{font-size:1.32rem}
   .dossier{grid-template-columns:1fr}
   .dossier-cover{max-width:240px}
   .dossier-fields{grid-template-columns:1fr}
@@ -385,9 +385,6 @@ section[id]{scroll-margin-top:76px}
 .editorial-cover.cover-ncx{background:linear-gradient(145deg,#315c45,#102b25);border-color:#6c9574}
 .editorial-cover.cover-log{background:linear-gradient(140deg,#3b664b,#1b3230);border-color:#719a74}
 .editorial-cover.cover-mount{background:linear-gradient(140deg,#45596d,#172a3d);border-color:#77899d}
-.editorial-cover.cover-case{background:linear-gradient(165deg,#2a5ca7,#173a70 65%,#102d51);border-color:#4c77b4}
-.folder-cover.editorial-cover{width:min(66%,300px);min-height:0;height:auto;margin:24px auto 0;box-shadow:0 1px 0 #18233033,0 16px 28px -14px #18233080}
-.exhibit .editorial-cover{width:min(70%,220px);margin:22px auto 4px}
 .dossier-cover.editorial-cover{width:100%;margin:0}
 .log-covers .editorial-cover{width:100%;margin:0}
 .log-covers .editorial-cover:last-child{margin-top:36px}
@@ -397,7 +394,6 @@ section[id]{scroll-margin-top:76px}
 /* October 27 V3 visual QA corrections; preview branch, not deployed. */
 /* Keep the decorative manila folder pocket behind, never over, the full title panel. */
 .sheet-folder .folder-pocket{z-index:0}
-.sheet-folder .folder-cover.editorial-cover{z-index:2;padding-bottom:24px}
 .sheet-folder .stamp{
   z-index:3;mix-blend-mode:normal;background:#fff9ef;color:#b11f29;
   box-shadow:0 3px 8px rgba(20,28,46,.16)
@@ -410,7 +406,6 @@ section[id]{scroll-margin-top:76px}
 }
 .editorial-cover.cover-mount .editorial-cover-title{font-size:clamp(1.15rem,1.7vw,1.5rem)}
 .editorial-cover.cover-ncx .editorial-cover-title{font-size:clamp(1.15rem,1.6vw,1.46rem)}
-.exhibit-file-panel .editorial-cover-title{font-size:clamp(1.8rem,2.6vw,2.6rem);text-wrap:nowrap}
 
 /* A balanced headline avoids orphaning "ONE" at desktop widths. */
 .cinema h2{max-width:none;line-height:1.02;font-size:clamp(2.9rem,4.1vw,4.3rem)}
@@ -466,9 +461,6 @@ section[id]{scroll-margin-top:76px}
 .exhibit-body .isbn{font-size:.78rem;line-height:1.65}
 .exhibit-body .links{gap:6px 19px}
 .exhibit-body .links a{font-size:.88rem}
-.tag-card{padding-top:40px;padding-bottom:25px}
-.tag-card h3{font-size:1.5rem;line-height:1.12}
-.tag-card .tag-label{font-size:.9rem}
 
 /* The story connection is deliberate rather than merely two small red dots. */
 .connected{grid-template-columns:minmax(0,1fr) 76px minmax(0,1fr)}
@@ -489,7 +481,6 @@ section[id]{scroll-margin-top:76px}
 }
 
 /* Bespoke filing treatments replace the generic 'THE CASE FILES' cover strip. */
-.editorial-cover.cover-case{background:linear-gradient(148deg,#315b95,#22477e 68%,#183456);border-color:#496f9b}
 .editorial-cover.cover-spy{background:repeating-linear-gradient(0deg,#122c33 0 18px,#21424b 19px),#12343a;border-color:#486d73;aspect-ratio:3/4}
 .editorial-cover.cover-ncx{background:radial-gradient(circle at 77% 18%,#416e5880,transparent 44%),linear-gradient(140deg,#315f4b,#163e34);border-color:#668975}
 .editorial-cover.cover-log{background:radial-gradient(circle at 80% 25%,#466b5780,transparent 38%),linear-gradient(160deg,#244b3c,#132d2a);border-color:#6a927a}
@@ -603,3 +594,22 @@ section[id]{scroll-margin-top:76px}
 .card .retailer-options{display:flex;flex-wrap:wrap;align-items:center;gap:0 15px;margin-top:auto;border-top:1px solid #d5cabe}
 .card .retailer-options a{margin-top:0;min-height:44px;padding:9px 0 0;font-size:.84rem}
 @media(max-width:550px){.card .retailer-options{gap:0 18px}.exhibit .links{gap:2px 16px}}
+
+/* November 7: real published covers supplied by Jeffery. */
+.sheet-folder .folder-cover{z-index:2;border-color:rgba(20,28,46,.16)}
+.exhibit img{background:#fff}
+@media(max-width:400px){
+  .later-cases .exhibit{grid-template-columns:minmax(0,108px) minmax(0,1fr)}
+  .later-cases .exhibit img{margin:16px 0 16px 14px}
+  .later-cases .exhibit-body{padding:16px 14px 18px 16px}
+  .later-cases .exhibit h3{font-size:1.2rem}
+}
+/* "Open on YouTube": same look, a full-size tap target. */
+.cinema-foot a{display:inline-flex;align-items:center;min-height:44px;margin:-12px 0;padding:0 2px}
+/* Stamp lands on the cover's open white space, clear of the printed title. */
+.sheet-folder .stamp{top:36%;right:3%}
+.cinema-foot{align-items:center}
+@media(max-width:360px){
+  .later-cases .exhibit{display:flex}
+  .later-cases .exhibit img{width:min(52%,150px);margin:20px auto 4px}
+}
