@@ -613,3 +613,104 @@ section[id]{scroll-margin-top:76px}
   .later-cases .exhibit{display:flex}
   .later-cases .exhibit img{width:min(52%,150px);margin:20px auto 4px}
 }
+
+/* November 18: Records index as a cover-first shelf.
+   Without JavaScript the same cards form a wrapped grid of all 25 books;
+   with it (.has-shelf) they become one horizontal, swipeable shelf. */
+.shelf-bar{display:flex;align-items:center;justify-content:space-between;gap:12px 20px;margin-bottom:16px}
+.shelf-bar .index-count{margin:0}
+.shelf-nav{display:flex;gap:8px;flex:0 0 auto}
+.shelf-nav[hidden],.index .filters[hidden]{display:none}
+.shelf-btn{display:inline-grid;place-items:center;width:46px;height:46px;padding:0;border:1px solid var(--ink);border-radius:2px;background:var(--sheet);color:var(--ink);font:700 1.15rem/1 var(--text);cursor:pointer;transition:background-color .15s,opacity .15s}
+.shelf-btn:hover{background:var(--manila)}
+.shelf-btn[aria-disabled="true"]{opacity:.32;cursor:default;background:var(--sheet)}
+.shelf-btn:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(176px,1fr));gap:18px;align-items:stretch}
+.cards .card{min-height:0;padding:10px 10px 4px;background:#fffdfa;border:1px solid #d3d0c8;box-shadow:0 1px 0 #c0b9a7,0 14px 24px -22px #131e2ba1;display:flex;flex-direction:column}
+.cards .card[hidden]{display:none}
+.cards .card:hover{border-color:#9babbc}
+.card-cover{position:relative;aspect-ratio:2/3;margin-bottom:12px;background:#fff;overflow:hidden;box-shadow:0 0 0 1px rgba(20,28,46,.12),0 8px 16px -12px rgba(20,28,46,.45)}
+.card-cover img{width:100%;height:100%;object-fit:cover}
+.cards .card .card-meta{margin:0 0 4px;padding:0;min-height:0;border:0;background:none;font:700 .7rem/1.4 var(--typed);letter-spacing:.03em;color:#33485d}
+.cards .card[data-group="pigeon"] .card-meta{color:#254b4c}
+.cards .card[data-group="ncx"] .card-meta{color:#234d3a}
+.cards .card[data-group="other"] .card-meta{color:#6b5436}
+.cards .card h3{font-size:1.2rem;line-height:1.1;margin:0 0 6px;max-width:none;text-wrap:balance}
+.cards .card>a,.cards .card .retailer-options{margin-top:auto;border-top:1px solid #ddd3c6}
+.cards .card>a,.cards .card .retailer-options a{min-height:36px;padding:0;font-size:.8rem;align-items:center;white-space:nowrap}
+.cards .card>a{align-self:stretch}
+.cards .card .retailer-options{gap:0 11px;padding-top:2px}
+
+/* Archival title card for books without supplied artwork: an index card, not a cover. */
+.title-card{display:flex;flex-direction:column;padding:12% 11% 9%;color:var(--ink);
+  background:repeating-linear-gradient(180deg,transparent 0 23px,#c9d6e4 23px 24px) 0 30%/100% 100% no-repeat,#fbf8ef;
+  border-top:6px solid var(--tc,#365a83);box-shadow:inset 0 0 0 1px #d8d0bf,0 8px 16px -12px rgba(20,28,46,.4)}
+.title-card::before{content:"";position:absolute;left:9%;top:0;bottom:0;width:1px;background:#e3a7a7}
+.title-card>span{position:relative}
+.title-card-kicker{font:700 .62rem/1.35 var(--typed);letter-spacing:.06em;text-transform:uppercase;color:var(--tc,#365a83);padding-bottom:8px;border-bottom:1px solid currentColor}
+.title-card-title{margin:auto 0;padding:12px 0;font:700 clamp(1.15rem,1.6vw,1.45rem)/1.05 var(--title);text-transform:uppercase;letter-spacing:.01em;text-wrap:balance;overflow-wrap:normal}
+.title-card-author{font:600 .7rem/1.3 var(--name);letter-spacing:.04em;color:var(--ink-2)}
+.title-card-tag{position:absolute!important;right:7%;top:4.5%;font:700 .54rem/1 var(--typed);letter-spacing:.12em;text-transform:uppercase;color:#8a8170}
+.card[data-group="pigeon"] .title-card{--tc:#2f6264}
+.card[data-group="ncx"] .title-card{--tc:#2f6a4c}
+.card[data-group="other"] .title-card{--tc:#8a6a44}
+
+/* The shelf (JavaScript on). Track bleeds to the screen edge on small screens. */
+.has-shelf .cards{display:flex;gap:18px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;
+  margin-inline:calc(-1 * var(--gutter));padding:6px var(--gutter) 14px;scroll-padding-inline:var(--gutter);scrollbar-width:none}
+.has-shelf .cards::-webkit-scrollbar{display:none}
+.has-shelf .cards>.card{flex:0 0 clamp(168px,17.6%,214px);scroll-snap-align:start}
+.has-shelf .cards:focus-visible{outline:3px solid var(--blue);outline-offset:-3px}
+.shelf-rail{position:relative;height:3px;margin-top:6px;background:#d6cfc0;overflow:hidden}
+.shelf-rail[hidden]{display:none}
+.shelf-rail span{position:absolute;left:0;top:0;bottom:0;width:100%;background:var(--red);will-change:transform}
+.shelf-rail.is-full{visibility:hidden}
+@media(prefers-reduced-motion:no-preference){.shelf-rail span{transition:transform .12s linear}}
+@media(max-width:1080px){.has-shelf .cards>.card{flex-basis:clamp(168px,22.5%,214px)}}
+@media(max-width:760px){.has-shelf .cards>.card{flex-basis:clamp(160px,31%,200px)}}
+@media(max-width:560px){
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .has-shelf .cards{gap:12px}
+  .has-shelf .cards>.card{flex-basis:max(138px,44%)}
+  .cards .card{padding:8px 8px 2px}
+  .cards .card h3{font-size:1.08rem}
+  .title-card-title{font-size:1.02rem}
+  .title-card-kicker{font-size:.56rem}
+  .shelf-btn{width:44px;height:44px}
+  .cards .card>a,.cards .card .retailer-options a{min-height:40px}
+}
+@media(max-width:380px){.has-shelf .cards>.card{flex-basis:54%}}
+
+/* November 18: Service record with an author photograph.
+   The .photo-plate is the finished treatment until Jeffery's portrait is supplied;
+   installing the photo = replacing .photo-plate with an <img> (see README). */
+.record-grid{grid-template-columns:minmax(260px,360px) minmax(0,1fr);grid-template-areas:"head head" "photo fields" "photo clip";grid-template-rows:auto auto 1fr;column-gap:clamp(36px,5vw,72px);row-gap:28px;align-items:start}
+.record-head{grid-area:head;max-width:760px;margin-bottom:12px}
+.record-photo{grid-area:photo;margin:0;padding:12px 12px 0;background:var(--sheet);border:1px solid var(--rule);box-shadow:0 22px 34px -28px rgba(20,28,46,.55);transform:rotate(-1.2deg);position:relative}
+.record-photo::before{content:"";position:absolute;top:-14px;left:28px;width:18px;height:46px;border:3px solid #8d96a3;border-radius:10px;border-bottom-color:transparent;z-index:2}
+.photo-mount{position:relative;aspect-ratio:4/5;overflow:hidden;background:#1b2b42}
+.photo-mount img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.photo-plate{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:9% 8% 8%;text-align:center;color:#ecdcb8;
+  background:radial-gradient(ellipse at 50% 42%,#2c4566 0,#1b2b42 58%,#142033 100%)}
+.photo-plate::before{content:"";position:absolute;inset:12px;border:1px solid #c9b48a55;pointer-events:none}
+.plate-kicker{font:700 .66rem/1.3 var(--typed);letter-spacing:.16em;text-transform:uppercase;color:#cdb98f}
+.plate-mono{font:600 clamp(4rem,7vw,5.4rem)/1 var(--name);letter-spacing:.02em;color:#f0e2c0}
+.plate-mono i{font-style:normal;color:#c2525c;margin:0 .04em}
+.plate-lines{font:700 .64rem/1.5 var(--typed);letter-spacing:.08em;text-transform:uppercase;color:#cdb98f;max-width:24ch}
+.record-photo figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 12px;padding:10px 2px 12px;font:700 .74rem/1.35 var(--typed);letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+.record-photo figcaption span+span{font-weight:400;color:var(--muted);letter-spacing:.03em}
+.record-grid .clipping{grid-area:clip;margin-top:0;max-width:none}
+.clipping-link{margin-top:6px;font-size:.92rem}
+.record-fields{grid-area:fields}
+@media(max-width:900px){
+  .record-grid{grid-template-columns:minmax(0,250px) minmax(0,1fr);grid-template-areas:"head head" "photo fields" "clip clip";grid-template-rows:auto auto auto;column-gap:32px}
+  .record-fields{grid-template-columns:1fr}
+  .record-fields .field:nth-child(2){border-top:1px solid var(--ink)}
+}
+@media(max-width:560px){
+  .record-grid{grid-template-columns:1fr;grid-template-areas:"head" "photo" "fields" "clip";row-gap:26px}
+  .record-photo{transform:rotate(-.8deg);max-width:340px;width:calc(100% - 8px);justify-self:center}
+  .photo-mount:not(:has(img)){aspect-ratio:3/2}
+  .plate-mono{font-size:3.6rem}
+}

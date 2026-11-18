@@ -23,10 +23,39 @@
     });
   }
 
-  // Records index filter
+  // Records index: series filter + horizontal shelf.
+  // Without this script the index stays a plain wrapped grid of all 25 books.
   var filterBar = document.querySelector('.filters');
+  var track = document.getElementById('index-cards');
   var cards = Array.prototype.slice.call(document.querySelectorAll('#index-cards .card'));
   var count = document.getElementById('index-count');
+  var shelfNav = document.querySelector('.shelf-nav');
+  var rail = document.querySelector('.shelf-rail');
+  var prevBtn = shelfNav && shelfNav.querySelector('[data-shelf="prev"]');
+  var nextBtn = shelfNav && shelfNav.querySelector('[data-shelf="next"]');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  function updateShelf() {
+    if (!track || !prevBtn) return;
+    var max = track.scrollWidth - track.clientWidth;
+    var x = Math.abs(track.scrollLeft);
+    var atStart = x <= 2, atEnd = x >= max - 2;
+    prevBtn.setAttribute('aria-disabled', String(atStart));
+    nextBtn.setAttribute('aria-disabled', String(atEnd || max <= 2));
+    if (rail) {
+      var bar = rail.firstElementChild;
+      var visible = max > 2 ? track.clientWidth / track.scrollWidth : 1;
+      bar.style.width = (visible * 100) + '%';
+      bar.style.transform = 'translateX(' + (max > 2 ? (x / max) * ((1 - visible) / visible) * 100 : 0) + '%)';
+      rail.classList.toggle('is-full', max <= 2);
+    }
+  }
+  function pageShelf(dir) {
+    // Advance by whole cards: one viewport width, less a card's peek.
+    var step = Math.max(track.clientWidth * 0.85, 160);
+    track.scrollBy({ left: dir * step, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+  }
+
   function applyFilter(name) {
     var shown = 0;
     cards.forEach(function (card) {
@@ -40,7 +69,27 @@
       });
     }
     if (count) count.textContent = 'Showing ' + shown + ' of ' + cards.length + ' books';
+    if (track) { track.scrollLeft = 0; updateShelf(); }
   }
+
+  if (track && cards.length && shelfNav) {
+    document.documentElement.classList.add('has-shelf');
+    shelfNav.hidden = false;
+    if (rail) rail.hidden = false;
+    track.setAttribute('tabindex', '0');
+    track.setAttribute('aria-label', 'Books, scroll sideways for more');
+    shelfNav.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-shelf]');
+      if (!b || b.getAttribute('aria-disabled') === 'true') return;
+      pageShelf(b.dataset.shelf === 'next' ? 1 : -1);
+    });
+    track.addEventListener('scroll', updateShelf, { passive: true });
+    window.addEventListener('resize', updateShelf);
+    // Covers load lazily; widths are reserved, but recheck once they arrive.
+    window.addEventListener('load', updateShelf);
+    updateShelf();
+  }
+
   if (filterBar && cards.length) {
     filterBar.hidden = false;
     filterBar.addEventListener('click', function (e) {
